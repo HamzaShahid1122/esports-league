@@ -1,9 +1,6 @@
 
 USE esports_db;
 
--- =========================================
--- 1. INSERT SAMPLE TOURNAMENT
--- =========================================
 
 INSERT INTO tournaments (name, game, start_date, end_date)
 VALUES (
@@ -13,9 +10,6 @@ VALUES (
     '2026-11-15'
 );
 
--- =========================================
--- 2. INSERT SIX PAKISTANI TEAMS
--- =========================================
 
 INSERT INTO teams (name, region, elo_rating, wins, losses)
 VALUES
@@ -26,10 +20,6 @@ VALUES
 ('Thar Vipers', 'Sindh', 1500.00, 0, 0),
 ('Hunza Hawks', 'Gilgit-Baltistan', 1500.00, 0, 0);
 
--- =========================================
--- 3. REGISTER ALL SIX TEAMS
---    IN THE SAMPLE TOURNAMENT
--- =========================================
 
 INSERT INTO tournament_teams (tournament_id, team_id)
 SELECT t.tournament_id, tm.team_id
@@ -45,9 +35,7 @@ AND tm.name IN (
     'Hunza Hawks'
 );
 
--- =========================================
--- 4. INSERT PLAYERS FOR INDUS FALCONS
--- =========================================
+
 
 INSERT INTO players (team_id, gamer_tag, real_name, role)
 SELECT team_id, 'FalconX', 'Ali Ahmed', 'Duelist'
@@ -61,9 +49,7 @@ INSERT INTO players (team_id, gamer_tag, real_name, role)
 SELECT team_id, 'FalconAce', 'Hamza Malik', 'Sentinel'
 FROM teams WHERE name = 'Indus Falcons';
 
--- =========================================
--- 5. INSERT PLAYERS FOR MARGALLA WOLVES
--- =========================================
+
 
 INSERT INTO players (team_id, gamer_tag, real_name, role)
 SELECT team_id, 'WolfStrike', 'Ahmed Raza', 'Duelist'
@@ -77,9 +63,6 @@ INSERT INTO players (team_id, gamer_tag, real_name, role)
 SELECT team_id, 'WolfGuard', 'Saad Iqbal', 'Sentinel'
 FROM teams WHERE name = 'Margalla Wolves';
 
--- =========================================
--- 6. INSERT PLAYERS FOR KHYBER TITANS
--- =========================================
 
 INSERT INTO players (team_id, gamer_tag, real_name, role)
 SELECT team_id, 'TitanKing', 'Zain Shah', 'Duelist'
@@ -93,9 +76,6 @@ INSERT INTO players (team_id, gamer_tag, real_name, role)
 SELECT team_id, 'TitanShield', 'Danish Khan', 'Sentinel'
 FROM teams WHERE name = 'Khyber Titans';
 
--- =========================================
--- 7. INSERT PLAYERS FOR RAVI RAIDERS
--- =========================================
 
 INSERT INTO players (team_id, gamer_tag, real_name, role)
 SELECT team_id, 'RaviRage', 'Usama Tariq', 'Duelist'
@@ -109,10 +89,6 @@ INSERT INTO players (team_id, gamer_tag, real_name, role)
 SELECT team_id, 'RaviSniper', 'Abdullah Noor', 'Sentinel'
 FROM teams WHERE name = 'Ravi Raiders';
 
--- =========================================
--- 8. INSERT PLAYERS FOR THAR VIPERS
--- =========================================
-
 INSERT INTO players (team_id, gamer_tag, real_name, role)
 SELECT team_id, 'ViperVenom', 'Ahsan Sheikh', 'Duelist'
 FROM teams WHERE name = 'Thar Vipers';
@@ -125,9 +101,6 @@ INSERT INTO players (team_id, gamer_tag, real_name, role)
 SELECT team_id, 'ViperEye', 'Saifullah Khan', 'Sentinel'
 FROM teams WHERE name = 'Thar Vipers';
 
--- =========================================
--- 9. INSERT PLAYERS FOR HUNZA HAWKS
--- =========================================
 
 INSERT INTO players (team_id, gamer_tag, real_name, role)
 SELECT team_id, 'HawkEye', 'Shahzaib Karim', 'Duelist'
